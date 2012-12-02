@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">jQuery Paypal Plugin</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="http://samdeering.com">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="hero-unit">
+                <h1>jQuery Paypal Buy It Now Plugin</h1>
+                <p>This is an easy to use jQuery Plugin which creates a Dynamic Paypal Buy It Now Button. You can customise drop down down options and specify your paypal email address for payment.</p>
+                <a href="#" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700');"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_SbyPP_mc_vs_dc_ae.jpg" border="0" alt="PayPal Acceptance Mark"></a>
+            </div>
+
+            <div class="row">
+                <div class="span12">
+                    <h2>Demo - drop down for selecting payment options.</h2>
+                    <p>Creates a paypal buy it now button dynamically with 1 drop down box containing payment options for different t-shirt size.</p>
+                    <div id="demo1"></div>
+                </div>
+                <div class="span12">
+
+                <button type="button" class="btn" data-toggle="collapse" data-target="#demo1-setup">JavaScript Setup Code</button>
+                <br/><br/>
+                <div id="demo1-setup" class="collapse out">
+<pre>
+;(function($)
+{
+
+     $(document).ready(function()
+     {
+        var options =
+        {
+            formId: 'myPaypalButton',
+            itemName: 'Buy a T-Shirt',
+            email: 'paypalemailadress@gmail.com',
+            basePrice: 59.00,
+            options:
+            {
+                sizes:
+                {
+                    name: 'Please select your size:',
+                    type: 'select',
+                    values:
+                    {
+                        'Size - Small' : 60.00,
+                        'Size - Medium'   : 69.00,
+                        'Size - Large'   : 79.99,
+                        'Size - Extra Large'   : 89.00,
+                        'Size - Too Big'   : 199.95
+                    }
+                }
+
+            },
+            countryCode: 'au',  //au, uk
+            currencySymbol: '$',
+            currencyCode: 'AUD'
+        };
+
+        $('#demo1').paypalBuyButton(options);
+
+     });
+
+})(jQuery);
+</pre>
+                </div>
+
+
+            </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="span12">
+                    <h2>Current versions and updates</h2>
+                    <p><strong>1.0 - Initial version - 02/12/2012</strong>
+                        <ul>
+                            <li>Support for only 1 drop down box with options.</li>
+                            <li>Supports for currency and country.</li>
+                            <li>Supports payment to any email address.</li>
+                            <li>Supports item name.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="span12">
+                    <h2>Features coming soon</h2>
+                    <ul>
+                        <li>Support for mutiple drop downs (base price related).</li>
+                        <li>Supports for number input (base price related).</li>
+                        <li>Supports for item options to be passed through to paypal.</li>
+                        <li>Supports for purchase quantity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="span12">
+                    <h2>Author</h2>
+                    Sam Deering / jQuery4u.com
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; jQuery4u.com 2012</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/jquery-paypal-buyitnow-plugin-1.0.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
