@@ -22,7 +22,7 @@
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     DEMO: http://samdeering.com/jquerypaypalbuyitnow/
-    DOWNLOAD:
+    DOWNLOAD: https://github.com/sdeering/jquerypaypalbuyitnow
     ARTICLE: http://jquery4u.com/plugins/jquerypaypalbuyitnow/
 
 */
